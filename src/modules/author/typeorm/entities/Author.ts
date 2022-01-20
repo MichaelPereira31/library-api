@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import {v4 as uuid} from 'uuid'
+import { Book } from "../../../book/typeorm/entities/Book";
 
 @Entity('author')
 class Author{
@@ -11,6 +12,9 @@ class Author{
 
     @Column()
     surname:string
+
+    @OneToMany(type => Book, author => Author)
+    book: Book[]
 
     @CreateDateColumn()
     created_at:Date

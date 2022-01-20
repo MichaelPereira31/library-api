@@ -1,6 +1,11 @@
 {
-   "type": "sqlite",
-   "database": "src/database/database.sqlite",
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "postgres",
+   "password": "0800",
+   "database": "storage",
+   "logging": false,
    "entities": [
       "src/modules/**/typeorm/entities/*.ts"
    ],
